@@ -92,28 +92,36 @@ User → Flask Web App → Image Preprocessing → Model Prediction → JSON Map
 ---
 
 ## 📂 Project Structure
+
+```
 Food-Classification-Using-CNN/
 │
-├── app.py
-├── requirements.txt
+├── app.py                     # Main Flask backend
+├── requirements.txt           # Project dependencies
+├── README.md                  # Project documentation
 │
-├── models/
+├── models/                    # Trained deep learning models
 │   ├── cnn.pkl
 │   ├── vgg16.pkl
 │   └── resnet.pkl
 │
-├── data/
+├── data/                      # Nutrition JSON files
 │   ├── burger.json
 │   ├── pizza.json
-│   └── sample.json
+│   ├── samosa.json
+│   ├── idli.json
+│   └── dosa.json
 │
-├── static/
-│   ├── uploads/
-│   └── outputs/
+├── static/                    # Static assets
+│   ├── uploads/               # Uploaded input images
+│   └── outputs/               # Prediction results
 │
-├── templates/
-│   ├── index.html
-│   └── result.html
-
-
-
+├── templates/                 # HTML templates
+│   ├── index.html             # Home page
+│   └── result.html            # Prediction result page
+│
+└── screenshots/               # Application screenshots (optional)
+    ├── home.png
+    ├── upload.png
+    └── result.png
+```
