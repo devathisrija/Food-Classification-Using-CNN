@@ -125,3 +125,111 @@ Food-Classification-Using-CNN/
     ├── upload.png
     └── result.png
 ```
+
+## 🧩 Installation & Setup
+
+### ✅ Prerequisites
+- Python 3.8 or above  
+- pip  
+- Git  
+- Virtual environment (optional)
+
+### 📥 Step 1: Clone the Repository
+git clone https://github.com/devathisrija/Food-Classification-Using-CNN.git
+
+cd Food-Classification-Using-CNN
+
+
+### 📦 Step 2: Create Virtual Environment (Optional)
+python -m venv venv
+
+Windows:
+venv\Scripts\activate
+
+
+### 📚 Step 3: Install Dependencies
+pip install -r requirements.txt
+
+
+### ▶️ Step 4: Run the Application
+python app.py
+
+
+### 🌐 Step 5: Access the Application
+http://127.0.0.1:5000/
+
+
+✅ Your Food Classification system is now successfully running!
+
+---
+
+## 🔄 Project Workflow
+
+1. User uploads a food image  
+2. Image preprocessing is performed  
+3. Selected model predicts the food class  
+4. Nutrition details are fetched using JSON  
+5. Result is displayed on the web page  
+6. User can download the prediction report  
+
+---
+
+## ✅ Testing & Validation
+
+- Image format validation  
+- Model prediction validation  
+- Nutrition data verification  
+- Frontend responsiveness testing  
+- Error handling for missing files and models  
+
+---
+
+## 🎯 Key Achievements
+
+- Built a complete AI-powered food recognition system  
+- Implemented multiple deep learning models  
+- Integrated nutrition analysis using JSON  
+- Designed an interactive and responsive UI  
+- Achieved high accuracy using transfer learning  
+
+---
+
+## 🔮 Future Enhancements
+
+- Real-time webcam-based detection  
+- Mobile application version  
+- Multi-food detection  
+- Portion size estimation  
+- Nutrition API integration  
+- Database integration  
+- Multi-language support  
+
+---
+
+## 🖼️ Screenshots
+
+### 🏠 Home Page
+
+![Result Page](screenshots/result.png)
+
+---
+
+## 👩‍💻 Developer
+
+**Devathi Srija**  
+AI & Machine Learning Developer  
+
+---
+
+## 📚 References
+
+- TensorFlow Documentation  
+- Keras Documentation  
+- OpenCV Documentation  
+- Flask Official Website  
+- Kaggle Food Datasets  
+
+---
+
+## ⭐ If you like this project, don’t forget to give it a star on GitHub!
+
