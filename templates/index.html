@@ -1,0 +1,82 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vihara Tech — Food Classification</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Topbar -->
+    <header class="topbar">
+      <div class="profile">
+        <img src="/static/img/profile.jpg" alt="Profile" class="profile-img">
+      </div>
+      <div class="titles">
+        <h1>Vihara Tech</h1>
+        <p class="sub">Food Classification using CNN</p>
+      </div>
+    </header>
+
+    <!-- Uploader -->
+    <main>
+      <section class="uploader">
+        <h2>Upload an image (JPG or PNG)</h2>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <label class="file-label">
+            <input type="file" name="image" id="image" accept="image/png, image/jpeg">
+          </label>
+
+          <div class="form-row">
+            <label>Provided class:</label>
+            <input type="text" name="provided_class" placeholder="e.g., dal_rice">
+          </div>
+
+          <button type="submit" class="btn">Upload Image</button>
+        </form>
+
+        <div id="preview">
+          {% if uploaded_image %}
+            <h3>Uploaded Image Preview</h3>
+            <div class="preview-card">
+              <img src="{{ uploaded_image }}" alt="Uploaded Image">
+            </div>
+
+            <div class="model-buttons">
+              <form action="/predict" method="post">
+                <input type="hidden" name="uploaded_image" value="{{ uploaded_image }}">
+                <input type="hidden" name="provided_class" value="{{ provided_class or '' }}">
+                <button name="model_choice" value="cnn" class="btn model">CNN</button>
+                <button name="model_choice" value="vgg16" class="btn model">VGG16</button>
+                <button name="model_choice" value="resnet" class="btn model">RESNET</button>
+              </form>
+            </div>
+          {% else %}
+            <p class="hint">No image uploaded yet — upload to see preview and prediction buttons.</p>
+          {% endif %}
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Preview image before upload
+    const imageInput = document.getElementById('image');
+    imageInput && imageInput.addEventListener('change', function(e){
+      const file = e.target.files[0];
+      if (!file) return;
+      const preview = document.getElementById('preview');
+      const imgContainer = document.createElement('div');
+      imgContainer.className = 'preview-card';
+      const img = document.createElement('img');
+      img.src = URL.createObjectURL(file);
+      img.alt = 'Selected Image';
+      imgContainer.appendChild(img);
+      preview.innerHTML = '<h3>Selected Image Preview</h3>';
+      preview.appendChild(imgContainer);
+    });
+  </script>
+</body>
+</html>

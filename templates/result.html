@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prediction Result</title>
+<style>
+    body { font-family: Arial, sans-serif; background: #f0f2f5; margin: 0; padding: 20px;}
+    .container { max-width: 900px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);}
+    h2 { color: #333; margin-bottom: 20px; text-align: center; }
+    .tabs { display: flex; border-bottom: 2px solid #ddd; margin-bottom: 20px; cursor: pointer; }
+    .tab { flex: 1; padding: 10px 0; text-align: center; background: #f9f9f9; border: 1px solid #ddd; border-bottom: none; border-radius: 10px 10px 0 0; }
+    .tab.active { background: #fff; font-weight: bold; color: #007bff; }
+    .tab-content { display: none; padding: 20px; border: 1px solid #ddd; border-radius: 0 0 10px 10px; background: #fff; }
+    .tab-content.active { display: block; }
+    img {
+    max-width: 400px; /* reduced size */
+    max-height: 400px; /* reduced size */
+    width: auto;
+    height: auto;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+}
+    pre { background: #f4f4f4; padding: 15px; border-radius: 8px; overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background-color: #f2f2f2; }
+    .btn { display: inline-block; padding: 10px 20px; margin: 10px 5px 0; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; }
+    .btn:hover { background-color: #0056b3; }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Prediction Result</h2>
+
+    <div class="tabs">
+        <div class="tab active" onclick="openTab(event, 'image')">Uploaded Image</div>
+        <div class="tab" onclick="openTab(event, 'details')">Predicted Class Details</div>
+        <div class="tab" onclick="openTab(event, 'metrics')">Metrics</div>
+    </div>
+
+    <div id="image" class="tab-content active">
+        {% if uploaded_image %}
+            <img src="{{ uploaded_image }}" alt="Uploaded Image">
+            <h3>Predicted Class: {{ predicted_class }}</h3>
+            {% if provided_class %}
+                <p>Provided Class: {{ provided_class }}</p>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <div id="details" class="tab-content">
+        <h3>Predicted Class Details</h3>
+        <pre>{{ json_content | tojson(indent=4) }}</pre>
+    </div>
+
+    <div id="metrics" class="tab-content">
+        {% if predicted_metrics %}
+            <h3>Metrics for Predicted Class</h3>
+            <table>
+                <tr>
+                    <th>Accuracy</th>
+                    <th>Precision</th>
+                    <th>Recall</th>
+                    <th>F1-Score</th>
+                    <th>Support</th>
+                    <th>TP</th>
+                    <th>TN</th>
+                    <th>FP</th>
+                    <th>FN</th>
+                </tr>
+                <tr>
+                    <td>{{ predicted_metrics.accuracy }}</td>
+                    <td>{{ predicted_metrics.precision }}</td>
+                    <td>{{ predicted_metrics.recall }}</td>
+                    <td>{{ predicted_metrics.f1_score }}</td>
+                    <td>{{ predicted_metrics.support }}</td>
+                    <td>{{ predicted_metrics.TP }}</td>
+                    <td>{{ predicted_metrics.TN }}</td>
+                    <td>{{ predicted_metrics.FP }}</td>
+                    <td>{{ predicted_metrics.FN }}</td>
+                </tr>
+            </table>
+        {% else %}
+            <p>No metrics available.</p>
+        {% endif %}
+    </div>
+
+    <div>
+        <a href="{{ prediction_json_path }}" class="btn">Download Prediction JSON</a>
+        <a href="{{ url_for('index') }}" class="btn">Try Another Image</a>
+    </div>
+</div>
+
+<script>
+function openTab(evt, tabName) {
+    const tabContents = document.getElementsByClassName('tab-content');
+    const tabs = document.getElementsByClassName('tab');
+
+    for (let i = 0; i < tabContents.length; i++) {
+        tabContents[i].classList.remove('active');
+        tabs[i].classList.remove('active');
+    }
+
+    document.getElementById(tabName).classList.add('active');
+    evt.currentTarget.classList.add('active');
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
