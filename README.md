@@ -224,7 +224,7 @@ This section provides visual references of **Food Classification Using CNN** app
 ![preview](https://github.com/devathisrija/Food-Classification-Using-CNN/blob/main/screenshots/Screenshot%20(712).png)
 
 **Model Selection**  
-![Model Selection](https://github.com/devathisrija/Food-Classification-Using-CNN/blob/main/screenshots/Screenshot%20(712).png)
+![Model Selection](https://github.com/devathisrija/Food-Classification-Using-CNN/blob/main/screenshots/Screenshot%20(714).png)
 
 **Result Visualization**  
 ![Predicted class](https://github.com/devathisrija/Food-Classification-Using-CNN/blob/main/screenshots/Screenshot%20(724).png)
