@@ -92,4 +92,28 @@ User → Flask Web App → Image Preprocessing → Model Prediction → JSON Map
 ---
 
 ## 📂 Project Structure
+Food-Classification-Using-CNN/
+│
+├── app.py
+├── requirements.txt
+│
+├── models/
+│   ├── cnn.pkl
+│   ├── vgg16.pkl
+│   └── resnet.pkl
+│
+├── data/
+│   ├── burger.json
+│   ├── pizza.json
+│   └── sample.json
+│
+├── static/
+│   ├── uploads/
+│   └── outputs/
+│
+├── templates/
+│   ├── index.html
+│   └── result.html
+
+
 
