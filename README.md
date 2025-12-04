@@ -210,7 +210,44 @@ http://127.0.0.1:5000/
 
 ### 🏠 Home Page
 
-![Result Page](screenshots/result.png)
+## 11. Screenshots
+
+This section provides visual references of **Food Classification Using CNN** application.  
+
+**Upload Image**  
+![Upload Image](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(651).png)
+
+
+**Draw Line**  
+![Draw Line](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(661).png)
+
+**Draw ArrowedLine**  
+![Draw ArrowedLine](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(663).png)
+
+**Draw Rectangle**  
+![Draw Rectangle](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(665).png)
+
+**Add Text**  
+![Add Text](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(669).png)
+
+**Draw Circle**  
+![Draw Circle](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(667).png)  
+
+**Add Date/Time**  
+![Add DateTime](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(672).png)  
+
+**Image Addition**  
+![Add Images](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(678).png)  
+
+**Weighted Addition**  
+![Weighted Add](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(680).png)  
+
+**Edge Detection**  
+![Edge Detection](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(673).png)  
+
+**Face Detection (Image)**  
+![Face Detection](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(674).png)  
+
 
 ---
 
